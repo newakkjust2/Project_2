@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976f187e9bdd435498a041615a35d47c, type: 3}
+  m_Name: Player_Inventory_Collection
+  m_EditorClassIdentifier: 
+  keys:
+  - Small Health Capsule
+  - Medium Health Capsule
+  - Large Health Potion
+  values:
+  - {fileID: 11400000, guid: 95f042d81299df64494801e60de7af61, type: 2}
+  - {fileID: 11400000, guid: 3835d3fa4ea7df44293834b7ea1f50ef, type: 2}
+  - {fileID: 11400000, guid: ac10016e4f4ecc44a898c125f98a9695, type: 2}
