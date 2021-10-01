@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FastInventory : MonoBehaviour
+public class 
+    FastInventory : MonoBehaviour
 {
     [SerializeField] private string[] FastEquipment = new string[3+1];
     [SerializeField] private KeyCode[] _keyCodesFast = new KeyCode[3+1]
@@ -92,11 +93,11 @@ public class FastInventory : MonoBehaviour
             _amountTexts[p].text = m_inventoryManager.d_GetItemAmounts[itemName].ToString();
         }
     }
-    public void DisplayVisual(string itemName)
+    public void DisplayVisual()
     {
         for (var p = 0; p < _previewImages.Length; p++)
         {
-            DisplayVisual(itemName, p);
+            DisplayVisual(FastEquipment[p], p);
         }
     }
 }

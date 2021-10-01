@@ -26,13 +26,12 @@ public class Inventory : MonoBehaviour
     private List<SlotUI> l_slotUIs = new List<SlotUI>();
     private Coroutine _coroutineHandler;
     
-
     private void Start()
     {
         CreateTwelveSlots();
         UpdateUI();
-        
     }
+    
     private void CreateTwelveSlots()
     {
         for (int i = 0; i < 12; i++)
@@ -42,6 +41,7 @@ public class Inventory : MonoBehaviour
         }
         slotPrefab.gameObject.SetActive(false);
     }
+    
     public void UpdateUI()
     {
         foreach (var slots in l_slotUIs)
@@ -75,9 +75,9 @@ public class Inventory : MonoBehaviour
         }
         
     }
+    
     public bool AddItem(string itemData)
     {
-        
         if (!collection.keys.Contains(itemData))
         {
             return false;
@@ -117,7 +117,7 @@ public class Inventory : MonoBehaviour
             // g.GetComponent<Weapon>().WeaponItemAction();
             itemUser.UseItem(itemName);
             UpdateUI();
-            _fastInventory.DisplayVisual(itemName);
+            _fastInventory.DisplayVisual( );
             return true;
         }
         return false;
