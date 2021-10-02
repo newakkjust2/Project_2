@@ -16,6 +16,7 @@ public class PatrolingAI : MonoBehaviour
     [SerializeField] private Transform[] waypoints;
     [SerializeField] private PoolProjectiles poolProjectiles;
     [SerializeField] private Animator animator;
+    [SerializeField] private Transform guardPostLocation;
     private NavMeshAgent _agent;
     private bool _hasArrived;
     private Vector3 _destination;
@@ -28,6 +29,7 @@ public class PatrolingAI : MonoBehaviour
     {
         _agent = GetComponent<NavMeshAgent>();
         _player = GameObject.FindWithTag("Player");
+        animator = GetComponent<Animator>();
         if (aiBehaviors == Behaviors.Idle)
         {
             _fightsRanged = true;
@@ -69,6 +71,7 @@ public class PatrolingAI : MonoBehaviour
 
     void RunIdleNode()
     {
+        animator.SetBool("isMoving", false);
         Idle();
     }
 
@@ -76,6 +79,7 @@ public class PatrolingAI : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, _player.transform.position) < 10)
         {
+            animator.SetBool("isMoving", true);
             aiBehaviors = Behaviors.Combat;
         }
     }
@@ -87,6 +91,7 @@ public class PatrolingAI : MonoBehaviour
 
     private void Guard()
     {
+        animator.SetBool("isMoving", true);
         if (Vector3.Distance(transform.position, waypoints[indexOfWaypoint].position) < 2)
         {
             _hasArrived = true;
@@ -109,6 +114,7 @@ public class PatrolingAI : MonoBehaviour
 
     void RunCombatNode()
     {
+
         if(_fightsRanged)
             RangedAttack();
         else
@@ -125,7 +131,11 @@ public class PatrolingAI : MonoBehaviour
         }
         else if(Vector3.Distance(_agent.transform.position, _player.transform.position) >= 10f)
         {
-            aiBehaviors = Behaviors.Guard;
+            _agent.SetDestination(guardPostLocation.position);
+            if (_agent.remainingDistance < _agent.stoppingDistance)
+            {
+                aiBehaviors = Behaviors.Idle;
+            }
         }
     }
 
