@@ -19,5 +19,4 @@ public class DropSlot : MonoBehaviour, IDropHandler
             _fi.Drop(i, dropName); 
         }
     }
-    
 }

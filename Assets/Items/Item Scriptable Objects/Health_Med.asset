@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Health_Med
   m_EditorClassIdentifier: 
   ItemName: Medium Health Capsule
-  Icon: {fileID: 21300000, guid: 99d4ddf64b212a849851692e87ac36d3, type: 3}
+  Icon: {fileID: 21300000, guid: c9890235a921d7e4fb764a80066196f1, type: 3}
   Description: 'Restores 50 Health '
   Stat: 0
   Value: 50

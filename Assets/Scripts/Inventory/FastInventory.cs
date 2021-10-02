@@ -10,13 +10,13 @@ public class
     [SerializeField] private string[] FastEquipment = new string[3+1];
     [SerializeField] private KeyCode[] _keyCodesFast = new KeyCode[3+1]
         {KeyCode.Keypad0, KeyCode.Keypad1, KeyCode.Keypad2, KeyCode.Keypad3};
-
     [SerializeField] private GameObject m_fastSlotPrefab;
     [SerializeField] public Inventory m_inventoryManager;
      
     private GameObject[] _fastSlots;
     private Image[] _previewImages;
-    private Text[] _amountTexts;
+    private Text[] _amountTexts, _nameTexts;
+    
     private Sprite _defaultSprite;
     
     
@@ -36,6 +36,7 @@ public class
         _fastSlots = new GameObject[n];
         _previewImages = new Image[n];
         _amountTexts = new Text[n];
+        _nameTexts = new Text[n];
 
         _fastSlots[0] = m_fastSlotPrefab;
         for (int i = 1; i < n; i++)
@@ -45,7 +46,8 @@ public class
         {
             DropSlot dropSlot = _fastSlots[i].GetComponent<DropSlot>();
             _previewImages[i] = _fastSlots[i].transform.GetChild(0).GetComponent<Image>();
-            _amountTexts[i] = _fastSlots[i].GetComponentInChildren<Text>();
+            _amountTexts[i] = _fastSlots[i].transform.GetChild(1).GetComponentInChildren<Text>();
+            _nameTexts[i] = _fastSlots[i].transform.GetChild(2).GetComponent<Text>();
             dropSlot.i = i;
             dropSlot._fi = this;
             dropSlot.m_collection = m_inventoryManager.collection;
@@ -84,13 +86,15 @@ public class
             || m_inventoryManager.d_GetItemAmounts[itemName] <= 0)
         {
             _previewImages[p].sprite = _defaultSprite;
-            _amountTexts[p].text = "Empty"; 
+            _amountTexts[p].text = "0";
+            _nameTexts[p].text = "Empty";
             FastEquipment[p] = "";
         }
         else
         {
             _previewImages[p].sprite = m_inventoryManager.collection.values[key].Icon;
             _amountTexts[p].text = m_inventoryManager.d_GetItemAmounts[itemName].ToString();
+            _nameTexts[p].text = itemName;
         }
     }
     public void DisplayVisual()
