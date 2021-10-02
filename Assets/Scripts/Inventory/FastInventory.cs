@@ -99,9 +99,9 @@ public class
     }
     public void DisplayVisual()
     {
-        for (var p = 0; p < _previewImages.Length; p++)
+        for (var p = 0; p < FastEquipment.Length; p++)
         {
-            DisplayVisual(FastEquipment[p], p);
+            DisplayVisual(FastEquipment[p], p); 
         }
     }
 }
