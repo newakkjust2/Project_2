@@ -52,11 +52,10 @@ public class Inventory : MonoBehaviour
         int index = 0;
         foreach (var itemName in ll_Items)
         {
-            int k = collection.keys.IndexOf(itemName);
             l_slotUIs[index].RefreshSlotUI(d_ItemAmounts[itemName], itemName, collection);
             l_slotButtons[index].onClick.RemoveAllListeners();
             l_slotButtons[index].onClick.AddListener(()=>UseItem(itemName));
-            l_slotButtons[index].gameObject.name = "Slot_" + itemName;
+            //l_slotButtons[index].gameObject.name = "Slot_" + itemName;
             index++;
         }
         if (ll_Items.Count < 6)

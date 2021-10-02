@@ -8,7 +8,8 @@ using UnityEngine.UI;
 public class SlotUI : MonoBehaviour
 {
     public Image icon;
-    public Text quantity;
+    public Text quantity, itemNameText;
+    
 
     private Sprite _defaultSprite;
     
@@ -23,14 +24,16 @@ public class SlotUI : MonoBehaviour
         int itemKey = collection.keys.IndexOf(itemName);
         ItemSO temp = collection.values[itemKey];
         icon.sprite = temp.Icon;
-        gameObject.name = itemName;
+        gameObject.name = "Slot_" + itemName;
         quantity.text = itemQuantity.ToString();
+        itemNameText.text = itemName;
     }
 
     public void RefreshSlotUI()
     {
         icon.sprite = _defaultSprite;
         quantity.text = String.Empty;
+        itemNameText.text = "Empty";
         gameObject.name = "Slot Empty";
     }
 }
