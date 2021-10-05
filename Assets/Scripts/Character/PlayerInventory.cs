@@ -11,11 +11,11 @@ namespace Character
             if (GlobalInventory.playerInventoryInstance == null)
             {
                 GlobalInventory.playerInventoryInstance = playerInventory;
-                DontDestroyOnLoad(gameObject);
+                //DontDestroyOnLoad(gameObject);
             }
             else
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
         }
     }

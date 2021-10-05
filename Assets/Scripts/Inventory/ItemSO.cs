@@ -17,4 +17,5 @@ public class ItemSO : ScriptableObject
     public string Description;
     public StatModifier Stat;
     public float Value;
+    public GameObject prefab;
 }

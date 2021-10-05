@@ -8,6 +8,14 @@ public static class SaveSystem
     public static int indexOfSong;
     public static bool loop;
     public static float volume = 0.2f;
+
+    public static float Volume
+    {
+        set
+        {
+            SaveData();
+        }
+    }
      
     public static GameObject sceneLoaderGameObject;
     
@@ -24,7 +32,7 @@ public static class SaveSystem
         PlayerData data = new PlayerData();
         formatter.Serialize(stream, data);
         stream.Close();
-    }
+    }   
 
     public static void LoadData()
     {
@@ -34,7 +42,7 @@ public static class SaveSystem
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
 
-            PlayerData a = formatter.Deserialize(stream) as PlayerData;
+            var a = formatter.Deserialize(stream) as PlayerData;
             stream.Close();
 
             loop = a.loop;

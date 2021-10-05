@@ -5,7 +5,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.UI;
 
-public class ItemSpawner : MonoBehaviour
+public class GameobjectSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] Prefabs;
     [SerializeField] private KeyCode spawnKeyCode = KeyCode.S;
@@ -17,7 +17,10 @@ public class ItemSpawner : MonoBehaviour
             foreach (var VARIABLE in Prefabs)
             {
                 GameObject g = Instantiate(VARIABLE);
-                g.transform.position = new Vector3((float) Random.Range(-5, 5), 2, (float) Random.Range(-5, 5));
+                g.transform.position = new Vector3((float) 
+                    transform.position.x + Random.Range(-5, 5), 
+                    transform.position.y + Random.Range(-0.1f, 0.2f), 
+                    transform.position.z + Random.Range(-5, 5));
             }
         }
     }

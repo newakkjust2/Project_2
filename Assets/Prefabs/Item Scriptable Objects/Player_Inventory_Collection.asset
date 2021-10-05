@@ -16,7 +16,13 @@ MonoBehaviour:
   - Small Health Capsule
   - Medium Health Capsule
   - Large Health Potion
+  - bomb
+  - bomb
+  - bomb
   values:
   - {fileID: 11400000, guid: 95f042d81299df64494801e60de7af61, type: 2}
   - {fileID: 11400000, guid: 3835d3fa4ea7df44293834b7ea1f50ef, type: 2}
   - {fileID: 11400000, guid: ac10016e4f4ecc44a898c125f98a9695, type: 2}
+  - {fileID: 11400000, guid: 488bfaf7d8a02794b8da459e5321e4e5, type: 2}
+  - {fileID: 11400000, guid: 3ee416a1da3ecd34a8868c1c5f04fc66, type: 2}
+  - {fileID: 11400000, guid: e94d395fbc7e06644b883a00f52e1df8, type: 2}
