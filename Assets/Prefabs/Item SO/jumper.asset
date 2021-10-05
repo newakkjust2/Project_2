@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: jumper
   m_EditorClassIdentifier: 
   ItemName: jumper
-  Icon: {fileID: 21300000, guid: 1d479c484d5a44d47a3e803c10e3afbf, type: 3}
-  Description: explousionable
-  Stat: 2
+  Icon: {fileID: 21300000, guid: 3abc98efc5b0f6445ac8d1dcf9babb5a, type: 3}
+  Description: gives uoy jump
+  Stat: 1
   Value: 20
-  prefab: {fileID: 1162411713233304211, guid: dd9688dd5cd12f541971d2695f3798f0, type: 3}
+  prefab: {fileID: 0}

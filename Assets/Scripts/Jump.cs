@@ -13,7 +13,7 @@ public class Jump : Usable
     public override void Use()
     {
          user.AddForce(force, ForceMode.Impulse);
-         if (_audioSource = null)
+         if (_audioSource == null)
              _audioSource = GetComponent<AudioSource>();
          _audioSource.Play();
 

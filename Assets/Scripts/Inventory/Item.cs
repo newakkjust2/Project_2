@@ -18,6 +18,10 @@ public class Item : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+            else
+            {
+                Debug.Log("The item is not assigned in ");
+            }
         }
     }
 }
